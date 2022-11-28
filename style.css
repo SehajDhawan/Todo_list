@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 95%;
+  height: auto;
+  padding: 15px 15px;
+  /* background-color: rgb(165, 42, 42); */
+  margin: auto;
+}
+
+.list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(102, 51, 153); */
+  margin: auto;
+}
+
+.card {
+  margin-top: 2rem;
+  /* margin-bottom: 2rem; */
+  width: 305px;
+  height: 85px;
+  /* background-color: lightcoral; */
+  position: relative;
+  border: 1px solid burlywood;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15px;
+  height: 100%;
+  background-color: var(--color);
+}
+
+.donebtn {
+  position: absolute;
+  top: 30px;
+  right: 5%;
+  font-size: 22px;
+}
+
+/* .card::after{
+    content: '\f00c';
+    position: absolute;
+    font-weight: 600;
+    font-family: "Font Awesome 6 Free";
+    top: 30px;
+    right: 5%;
+    font-size: 22px;
+} */
+
+.card.active::before {
+  content: "Done";
+  position: absolute;
+  width: 305px;
+  height: 85px;
+  background-color: lightsalmon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card.active::after {
+  content: "";
+  /* position: absolute; */
+}
+
+.buttongroup {
+  position: absolute;
+  bottom: 4%;
+  right: 40%;
+  display: none;
+}
+
+.card p {
+  padding: 30px 0;
+  padding-left: 25px;
+  font-size: 22px;
+}
+
+.data {
+  width: 250px;
+  position: fixed;
+  bottom: 8%;
+  right: 8%;
+}
+
+.add_task {
+  display: none;
+}
+
+input[type="text"] {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid blue;
+  border-radius: 4%;
+  padding: 5px 5px;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+input[type="text"]:focus {
+  box-shadow: 1px 1px red;
+}
+
+.addtaskbtn {
+  border: none;
+  outline: none;
+  border: 5%;
+  text-transform: uppercase;
+  background-color: aquamarine;
+  padding: 5px 5px;
+}
+
+.addtaskbtn:active,
+.addicon:active,
+img:active,
+.fa-check:active {
+  scale: 0.9;
+}
+
+.addicon {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.addicon::before {
+  content: "";
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background-color: lightgreen;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.fa-plus {
+  font-size: 24px;
+}
+
+.card.active .buttongroup {
+  display: inline-block;
+}
+
+.card.active .donebtn {
+  display: none;
+}
+
+.add_task.show {
+  display: flex;
+}
+/* 
+.data{
+    position: fixed;
+    bottom: 8%;
+    right: 50%;
+    left: 50%;
+}
+
+.add_task{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addicon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.addicon::before{
+    content: "";
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-color: lightgreen;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.fa-plus{
+    font-size: 24px;
+} */
